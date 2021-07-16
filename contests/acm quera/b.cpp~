@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#define INF 5000
+
+using namespace std;
+
+int main() {
+
+  int money, n;
+  cin >> money >> n;
+  int so=0, noz=INF, all=money, allGold=0;
+
+  for (int i = 1; i <= n;i++){
+    int gold; cin >> gold;
+    if (gold <= noz){
+      noz = gold;
+    }
+    else {
+      allGold = all / noz;
+      all = all % noz;
+    }
+    if (gold >= so){
+      so = gold;
+      noz = so;
+    }
+  }
+  cout << all << endl;
+  
+  return 0;
+}
